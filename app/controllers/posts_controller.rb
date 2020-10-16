@@ -9,8 +9,8 @@ class PostsController < ApplicationController
   # end
 
   def create
-    Post.create(content: params[:content], checked: false)
-    redirect Json:{ post: post }
+    post = Post.create(content: params[:content], checked: false)
+    render json:{ post: post }
   end
 
   def checked
